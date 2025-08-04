@@ -7,16 +7,13 @@ node {
 
     stage('Install Dependencies') {
         sh '''
-            python3 -m venv venv
-            source venv/bin/activate
             pip install --upgrade pip
-            pip install -r requirements.txt || echo "No requirements.txt found"
+            pip install pytest
         '''
     }
 
     stage('Run Tests') {
         sh '''
-            . venv/bin/activate
             pytest --junitxml=report.xml
         '''
     }
