@@ -1,7 +1,8 @@
 node {
     stage('Preparation') {
         // Clone the GitHub repository
-        git 'https://github.com/Tech-master1234/jenkins_pipeline.git'
+        git branch: 'main', url: 'https://github.com/Tech-master1234/jenkins_pipeline.git'
+
     }
 
     stage('Install Dependencies') {
