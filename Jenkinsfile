@@ -16,7 +16,7 @@ node {
 
     stage('Run Tests') {
         sh '''
-            source venv/bin/activate
+            . venv/bin/activate
             pytest --junitxml=report.xml
         '''
     }
